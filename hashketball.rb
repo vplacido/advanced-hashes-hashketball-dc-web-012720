@@ -1,3 +1,6 @@
+require "pry"
+
+
 def game_hash
   newHash = {
     home: {
@@ -79,6 +82,7 @@ def big_shoe_rebounds
   rebounds = 0 
   game_hash.each do |team_type, t|
     t[:players].each do |player|
+      binding.pry
       if (player[:shoe] > shoe_size)
         shoe_size = player[:shoe]
         rebounds = player[:rebounds]
@@ -143,4 +147,4 @@ def long_name_steals_a_ton?
   name === player_with_longest_name
 end
       
-  
+big_shoe_rebounds
